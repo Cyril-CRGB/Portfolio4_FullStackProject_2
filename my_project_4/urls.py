@@ -17,9 +17,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from car_park_manager import views as index_views
+from django.views.generic import RedirectView
 
 urlpatterns = [
-    path('', index_views.index, name='index'),
-    path("admin/", admin.site.urls),
+    path('', RedirectView.as_view(url='car_park_manager/', permanent=False)), # Redirect the root URL to car_park_manager app
+    path('admin/', admin.site.urls), # URL for admin site
+    path('accounts/', include('django.contrib.auth.urls')), # Include Django's auth URLS
+    path('car_park_manager/', include('car_park_manager.urls')), # URL for booking success
 ]

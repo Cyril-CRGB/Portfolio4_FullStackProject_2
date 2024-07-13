@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book Parking Slot</title>
+    </head>
+    <body>
+        <h1>Book a Parking Slot</h1>
+        <form method="post">
+            <!-- CSRF token for security -->
+            {{ form.as_p }} <!-- Render form fields -->
+            <button type="submit">Book Slot</button>
+        </form>
+    </body>
+</html>
