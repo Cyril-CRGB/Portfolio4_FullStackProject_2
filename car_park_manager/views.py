@@ -38,3 +38,9 @@ def book_slot(request):
 #@login_required  Ensure the user is logged in
 def booking_success(request):
     return render(request, 'car_park_manager/booking_success.html')
+
+
+# View to display booking calendar
+#@login_required  Ensure the user is logged in
+def calendar_view(request):
+    return render(request, 'car_park_manager/calendar.html')

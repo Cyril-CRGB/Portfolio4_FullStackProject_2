@@ -6,6 +6,7 @@
     <body>
         <h1>Book a Parking Slot</h1>
         <form method="post">
+            {% csrf_token %}
             {{ form.as_p }} <!-- Render form fields -->
             <button type="submit">Book Slot</button>
         </form>
