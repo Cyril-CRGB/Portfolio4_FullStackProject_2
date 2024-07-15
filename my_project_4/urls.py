@@ -23,5 +23,5 @@ urlpatterns = [
     path('', RedirectView.as_view(url='car_park_manager/', permanent=False)), # Redirect the root URL to car_park_manager app
     path('admin/', admin.site.urls), # URL for admin site
     path('accounts/', include('django.contrib.auth.urls')), # Include Django's auth URLS
-    path('car_park_manager/', include('car_park_manager.urls')), # URL for booking success
+    path('car_park_manager/', include('car_park_manager.urls')), # Include app URLS.
 ]
