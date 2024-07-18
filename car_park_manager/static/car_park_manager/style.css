@@ -37,13 +37,13 @@ button {
     width: 100px;
     padding: 10px;
 }
-#calendar{
+#calendar {
     width: 100%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
 }
-.day{
+.day {
     width: 100px;
     padding: 10px;
     height: 100px;
@@ -51,18 +51,18 @@ button {
     box-sizing: border-box;
     background-color: white;
     margin: 5px;
-    box-shadow: 0px 0px 3 px #CBD4C2;
+    box-shadow: 0px 0px 3px #CBD4C2;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.day:hover{
+.day:hover {
     background-color: #e8faed;
 }
-.day + #currentDay{
+#currentDay {
     background-color: #e8f4fa;
 }
-.event{
+.event {
     font-size: 10px;
     padding: 3px;
     background-color: #58bae4;
@@ -89,7 +89,7 @@ button {
     position: absolute;
     font-family: sans-serif;
 }
-#eventTitleInput{
+#eventTitleInput {
     padding: 10px;
     width: 100%;
     box-sizing: border-box;
@@ -102,7 +102,7 @@ button {
 #eventTitleInput.error {
     border: 2px solid red;
 }
-#cancelButton, #deletButton {
+#cancelButton, #deleteButton {
     background-color: #d36c6c;
 }
 #saveButton, #closeButton {
