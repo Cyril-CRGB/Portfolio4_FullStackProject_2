@@ -61,7 +61,9 @@ button {
 }
 #currentDay {
     background-color: #e8f4fa;
+    /*position: relative;  To ensure the label is positioned correctly */
 }
+
 .event {
     font-size: 10px;
     padding: 3px;

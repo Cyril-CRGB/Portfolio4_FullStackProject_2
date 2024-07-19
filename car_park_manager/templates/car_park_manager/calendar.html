@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, intiial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Page title -->
         <title>Calendar</title>
         <!-- Link to external CSS file for styling -->
@@ -38,8 +38,15 @@
 
             <!-- Calendar grid where days will be displayed -->
             <div id="calendar"></div>
-
         </div>
+        <!-- Modal for displaying and making a new an event -->
+        <div id="newEventModal">
+            <h2>New Event</h2>
+            <input id="eventTitleInput" placeholder="Event Title"/>
+            <button id="saveButton">Save</button>
+            <button id="cancelButton">Cancel</button>
+        </div>
+
         <!-- Modal for displaying and deleting an event -->
         <div id="deleteEventModal">
             <h2>Event</h2>
@@ -49,7 +56,7 @@
             <button id="deleteButton">Delete</button>
             <button id="closeButton">Close</button>
         </div>
-
+        
         <!-- Background overlay for modals -->
         <div id="modalBackDrop"></div>
 
