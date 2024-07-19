@@ -2,7 +2,11 @@ body {
     display: flex;
     margin-top: 50px;
     justify-content: center;
-    background-color: #FFFCFF;
+    background-color: #06251c;
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+}
+h1, h2, h3, p, div, button {
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 }
 button {
     width: 75px;
@@ -12,18 +16,18 @@ button {
     outline: none;
     padding: 5px;
     border-radius: 5px;
-    color: white;
+    color: whitesmoke;
 }
 #header {
     padding: 10px;
-    color: #d36c6c;
+    color: #0D8F2D;
     font-size: 26px;
     font-family: sans-serif;
     display: flex;
     justify-content: space-between;
 }
 #header button {
-    background-color: #92a1d1;
+    background-color: #37A963;
 }
 #container {
     width: 770px;
@@ -31,7 +35,7 @@ button {
 #weekdays {
     width: 100%;
     display: flex;
-    color: #247BA0;
+    color: #0D8F2D;
 }
 #weekdays div {
     width: 100px;
@@ -49,25 +53,26 @@ button {
     height: 100px;
     cursor: pointer;
     box-sizing: border-box;
-    background-color: white;
+    background-color: whitesmoke;
     margin: 5px;
-    box-shadow: 0px 0px 3px #CBD4C2;
+    box-shadow: 0px 0px 3px #1E6C56;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: #1E6C56;
 }
 .day:hover {
-    background-color: #e8faed;
+    background-color: #05f84a;
 }
 #currentDay {
-    background-color: #e8f4fa;
-    /*position: relative;  To ensure the label is positioned correctly */
+    background-color: #1E6C56;
+    color: whitesmoke;
 }
 
 .event {
     font-size: 10px;
     padding: 3px;
-    background-color: #58bae4;
+    background-color: #fc5001;
     color: white;
     border-radius: 5px;
     max-height: 55px;
@@ -75,14 +80,14 @@ button {
 }
 .padding {
     cursor: default !important;
-    background-color: #FFFCFF !important;
+    background-color: #06251c !important;
     box-shadow: none !important;
 }
 #newEventModal, #deleteEventModal {
     display: none;
     z-index: 20;
     padding: 25px;
-    background-color: #e8f4fa;
+    background-color: whitesmoke;
     box-shadow: 0px 0px 3px black;
     border-radius: 5px;
     width: 350px;
@@ -105,10 +110,10 @@ button {
     border: 2px solid red;
 }
 #cancelButton, #deleteButton {
-    background-color: #d36c6c;
+    background-color: gray;
 }
 #saveButton, #closeButton {
-    background-color: #92a1d1;
+    background-color: #0D8F2D;
 }
 #eventText {
     font-size: 14px;
@@ -121,5 +126,5 @@ button {
     width: 100vw;
     height: 100vh;
     position:absolute;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.7);
 }
