@@ -47,6 +47,9 @@ button {
     display: flex;
     flex-wrap: wrap;
 }
+.day:hover {
+    background-color: #05f84a;
+}
 .day {
     width: 100px;
     padding: 10px;
@@ -61,9 +64,7 @@ button {
     justify-content: space-between;
     color: #1E6C56;
 }
-.day:hover {
-    background-color: #05f84a;
-}
+
 #currentDay {
     background-color: #1E6C56;
     color: whitesmoke;

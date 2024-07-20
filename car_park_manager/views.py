@@ -44,3 +44,8 @@ def booking_success(request):
 #@login_required  Ensure the user is logged in
 def calendar_view(request):
     return render(request, 'car_park_manager/calendar.html')
+
+# View to display base
+#@login_required  Ensure the user is logged in
+def base_view(request):
+    return render(request, 'car_park_manager/base.html')
