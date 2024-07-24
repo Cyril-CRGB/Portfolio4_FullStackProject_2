@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,60 +9,63 @@
         <title>Calendar</title>
         <!-- Link to external CSS file for styling -->
         <link rel="stylesheet" href="{% static 'car_park_manager/style.css' %}">
+
     </head>
     <body>
 
-        <!-- Main container for the calendar application -->
-        <div id="container">
-
-            <!-- Header section containing month display and navigation buttons -->
-            <div id="header">
-                <!-- Display current month and year -->
-                <div id="monthDisplay"></div>
-                <!-- Navigation buttons to switch months -->
-                <div>
-                    <button id="backButton">Back</button>
-                    <button id="nextButton">Next</button>
-                </div>
-            </div>
-
-            <!-- Weekdays header -->
-            <div id="weekdays">
-                <div>Sunday</div>
-                <div>Monday</div>
-                <div>Tuesday</div>
-                <div>Wednesday</div>
-                <div>Thursday</div>
-                <div>Friday</div>
-                <div>Saturday</div>
-            </div>
-
-            <!-- Calendar grid where days will be displayed -->
-            <div id="calendar"></div>
-        </div>
-        <!-- Modal for displaying and making a new an event -->
-        <div id="newEventModal">
-            <h2>Book this day</h2>
-            <input id="eventTitleInput" placeholder="Event Title"/>
-            <button id="saveButton">Save</button>
-            <button id="cancelButton">Cancel</button>
-        </div>
-
-        <!-- Modal for displaying and deleting an event -->
-        <div id="deleteEventModal">
-            <h2>Event</h2>
-            <!-- Paragraph to display event text -->
-            <p id="eventText"></p>
-            <!-- Buttons to delete or close the event -->
-            <button id="deleteButton">Delete</button>
-            <button id="closeButton">Close</button>
-        </div>
+        {% if user.is_authenticated %}
         
-        <!-- Background overlay for modals -->
-        <div id="modalBackDrop"></div>
+            <!-- Main container for the calendar application -->
+            <div id="container">
 
+                <!-- Header section containing month display and navigation buttons -->
+                <div id="header">
+                    <!-- Display current month and year -->
+                    <div id="monthDisplay"></div>
+                    <!-- Navigation buttons to switch months -->
+                    <div>
+                        <button id="backButton">Back</button>
+                        <button id="nextButton">Next</button>
+                    </div>
+                </div>
 
+                <!-- Weekdays header -->
+                <div id="weekdays">
+                    <div>Sunday</div>
+                    <div>Monday</div>
+                    <div>Tuesday</div>
+                    <div>Wednesday</div>
+                    <div>Thursday</div>
+                    <div>Friday</div>
+                    <div>Saturday</div>
+                </div>
+
+                <!-- Calendar grid where days will be displayed -->
+                <div id="calendar"></div>
+            </div>
+            <!-- Modal for displaying and making a new an event -->
+            <div id="newEventModal">
+                <h2>Book this day</h2>
+                <input id="eventTitleInput" placeholder="Event Title"/>
+                <button id="saveButton">Save</button>
+                <button id="cancelButton">Cancel</button>
+            </div>
+
+            <!-- Modal for displaying and deleting an event -->
+            <div id="deleteEventModal">
+                <h2>Event</h2>
+                <!-- Paragraph to display event text -->
+                <p id="eventText"></p>
+                <!-- Buttons to delete or close the event -->
+                <button id="deleteButton">Delete</button>
+                <button id="closeButton">Close</button>
+            </div>
+            
+            <!-- Background overlay for modals -->
+            <div id="modalBackDrop"></div>
+            {% endif %}
         <!-- Link to external JavaScript file for functionality -->
+
 
         <script src="{% static 'car_park_manager/script.js' %}"></script>
 
