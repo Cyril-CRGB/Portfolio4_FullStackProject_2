@@ -2,10 +2,11 @@ body {
     display: flex;
     margin-top: 50px;
     justify-content: center;
-    background-color: #06251c;
+    /* background-color: #06251c; */
     font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+    color: whitesmoke;
 }
-h1, h2, h3, p, div, button {
+h1, h2, h3, h4, p, div, button {
     font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 }
 button {
@@ -52,20 +53,20 @@ button {
 }
 .day {
     /* width: 240px; */
-    flex: 1 0 calc(100% / 7 - 10px);
+    
     padding: 10px;
     height: 100px;
     cursor: pointer;
     box-sizing: border-box;
     background-color: whitesmoke;
     margin: 5px;
-    box-shadow: 0px 0px 3px #1E6C56;
+    /* box-shadow: 0px 0px 3px #1E6C56; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     color: #1E6C56;
-    border: 1px solid #ddd;
     text-align: center;
+    flex: 1 0 calc(100% / 7 - 10px);
 }
 
 #currentDay {

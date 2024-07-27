@@ -10,8 +10,8 @@
         <!-- Page title -->
         <title>Calendar App</title>
         <!-- Link to external CSS file for styling -->
-        <link rel="stylesheet" href="{% static 'car_park_manager/style.css' %}">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'car_park_manager/style.css' %}">
     </head>
     <body>
         {% if user.is_authenticated %}
@@ -21,8 +21,6 @@
                 <div>
                     <button id="backButton" class="btn btn-secondary">Back</button>
                     <button id="nextButton" class="btn btn-secondary">Next</button>
-                </div>
-                <div>                        
                     <form method="POST" action="{{ logout_url }}">
                         {% csrf_token %}
                         <button type="submit" class="btn btn-danger">Logout</button>
@@ -38,7 +36,7 @@
                 <div class="flex-fill">Friday</div>
                 <div class="flex-fill">Saturday</div>
             </div>
-            <div id="calendar" class="d-flex flex-wrap"></div>
+            <div id="calendar"></div>
         </div>
         <div id="newEvenModal" class="modal" tabindex="-1">
             <div class="modal-dialog">
