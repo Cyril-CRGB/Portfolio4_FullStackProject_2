@@ -42,8 +42,8 @@ button {
     padding: 10px;
 }
 #calendar {
-    width: 100%;
-    margin: auto;
+    /* width: 100%;
+    margin: auto; */
     display: flex;
     flex-wrap: wrap;
 }
@@ -51,7 +51,8 @@ button {
     background-color: #05f84a;
 }
 .day {
-    width: 100px;
+    /* width: 240px; */
+    flex: 1 0 calc(100% / 7 - 10px);
     padding: 10px;
     height: 100px;
     cursor: pointer;
@@ -63,6 +64,8 @@ button {
     flex-direction: column;
     justify-content: space-between;
     color: #1E6C56;
+    border: 1px solid #ddd;
+    text-align: center;
 }
 
 #currentDay {

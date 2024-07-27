@@ -5,6 +5,8 @@ from django.contrib import messages
 # View to display base
 #@login_required  Ensure the user is logged in
 def index_view(request):
+    if request.user.is_authenticated:
+        return redirect('calendar')
     return render(request, 'car_park_manager/index.html')
 
 

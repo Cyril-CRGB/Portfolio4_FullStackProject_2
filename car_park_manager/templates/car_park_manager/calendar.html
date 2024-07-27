@@ -1,74 +1,85 @@
 {% load static %}
 
+{% url 'account_logout' as logout_url %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Page title -->
-        <title>Calendar</title>
+        <title>Calendar App</title>
         <!-- Link to external CSS file for styling -->
         <link rel="stylesheet" href="{% static 'car_park_manager/style.css' %}">
-
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-
         {% if user.is_authenticated %}
-        
-            <!-- Main container for the calendar application -->
-            <div id="container">
-
-                <!-- Header section containing month display and navigation buttons -->
-                <div id="header">
-                    <!-- Display current month and year -->
-                    <div id="monthDisplay"></div>
-                    <!-- Navigation buttons to switch months -->
-                    <div>
-                        <button id="backButton">Back</button>
-                        <button id="nextButton">Next</button>
+        <div class="container mt-5">
+            <div clas="d-flex justify-content-between align-items-center mb-3">
+                <div id="monthDisplay" class="h4"></div>
+                <div>
+                    <button id="backButton" class="btn btn-secondary">Back</button>
+                    <button id="nextButton" class="btn btn-secondary">Next</button>
+                </div>
+                <div>                        
+                    <form method="POST" action="{{ logout_url }}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Logout</button>
+                    </form>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between mb-2 text-center bg-light py-2">
+                <div class="flex-fill">Sunday</div>
+                <div class="flex-fill">Monday</div>
+                <div class="flex-fill">Tuesday</div>
+                <div class="flex-fill">Wednesday</div>
+                <div class="flex-fill">Thursday</div>
+                <div class="flex-fill">Friday</div>
+                <div class="flex-fill">Saturday</div>
+            </div>
+            <div id="calendar" class="d-flex flex-wrap"></div>
+        </div>
+        <div id="newEvenModal" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">New Event</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" arial-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input id="eventTitleInput" placeholder="Event Title" class="form-control" />
+                    </div>
+                    <div class="modal-footer">
+                        <button id="saveButton" class="btn btn-primary">Save</button>
+                        <button id="cancelButton" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                     </div>
                 </div>
-
-                <!-- Weekdays header -->
-                <div id="weekdays">
-                    <div>Sunday</div>
-                    <div>Monday</div>
-                    <div>Tuesday</div>
-                    <div>Wednesday</div>
-                    <div>Thursday</div>
-                    <div>Friday</div>
-                    <div>Saturday</div>
+            </div>
+        </div>
+        <div id="deleteEventModal" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Event</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" arial-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="eventText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="deletButton" class="btn btn-danger">Delete</button>
+                        <button id="closeButton" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
-
-                <!-- Calendar grid where days will be displayed -->
-                <div id="calendar"></div>
             </div>
-            <!-- Modal for displaying and making a new an event -->
-            <div id="newEventModal">
-                <h2>Book this day</h2>
-                <input id="eventTitleInput" placeholder="Event Title"/>
-                <button id="saveButton">Save</button>
-                <button id="cancelButton">Cancel</button>
-            </div>
-
-            <!-- Modal for displaying and deleting an event -->
-            <div id="deleteEventModal">
-                <h2>Event</h2>
-                <!-- Paragraph to display event text -->
-                <p id="eventText"></p>
-                <!-- Buttons to delete or close the event -->
-                <button id="deleteButton">Delete</button>
-                <button id="closeButton">Close</button>
-            </div>
-            
-            <!-- Background overlay for modals -->
-            <div id="modalBackDrop"></div>
-            {% endif %}
-        <!-- Link to external JavaScript file for functionality -->
-
+        </div>
+        <div id="modalBackDrop" class="modal-backdrop fade show d-none"></div>
+        {% endif %}
 
         <script src="{% static 'car_park_manager/script.js' %}"></script>
-
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
-
 </html>
