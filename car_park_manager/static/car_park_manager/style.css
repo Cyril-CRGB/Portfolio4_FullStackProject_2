@@ -2,14 +2,14 @@ body {
     display: flex;
     margin-top: 50px;
     justify-content: center;
-    /* background-color: #06251c; */
+    background-color: #06251c;
     font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
     color: whitesmoke;
 }
 h1, h2, h3, h4, p, div, button {
     font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 }
-button {
+/* button {
     width: 75px;
     cursor: pointer;
     box-shadow: 0px 0px 2px gray;
@@ -18,7 +18,8 @@ button {
     padding: 5px;
     border-radius: 5px;
     color: whitesmoke;
-}
+    background-color: #06251c;
+}*/
 #header {
     padding: 10px;
     color: #0D8F2D;
@@ -36,7 +37,7 @@ button {
 #weekdays {
     width: 100%;
     display: flex;
-    color: #0D8F2D;
+    /* color: #0D8F2D;*/
 }
 #weekdays div {
     width: 100px;
@@ -51,6 +52,7 @@ button {
 .day:hover {
     background-color: #05f84a;
 }
+
 .day {
     /* width: 240px; */
     

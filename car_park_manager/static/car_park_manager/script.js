@@ -13,7 +13,7 @@ function openModal(date){
     clicked = date;
 
     const eventForDay = events.find(e => e.date === clicked);
-
+    
     if (eventForDay) {
         document.getElementById('eventText').innerText = eventForDay.title;
         deleteEventModal.style.display = 'block';
@@ -46,24 +46,28 @@ function load() {
     const paddingDays = weekdays.indexOf(dateString.split(',')[0]);
 
     document.getElementById('monthDisplay').innerText = `${dt.toLocaleDateString('en-us', { month: 'long'})} ${year}`;
-
+    
     calendar.innerHTML = '';
 
-    for(let i = 1; i <= paddingDays + daysInMonth; i++) {
+    // Calculate total squares
+    const totalSquares = paddingDays + daysInMonth;
+    const rows = Math.ceil(totalSquares / 7);
+    const totalGridSquares = rows * 7;
+
+    for (let i = 1; i <= totalGridSquares; i++) {
         const daySquare = document.createElement('div');
-        daySquare.classList.add('col', 'day'); //, 
+        daySquare.classList.add('day');
 
-        const dayString = `${month + 1}/${i - paddingDays}/${year}`;
-
-        if (i > paddingDays) {
+        if (i > paddingDays && i <= paddingDays + daysInMonth) {
+            const dayString = `${month + 1}/${i - paddingDays}/${year}`;
             daySquare.innerText = i - paddingDays;
-            const eventForDay = events.find(e => e.date === dayString);
 
             if (i - paddingDays === day && nav === 0) {
                 daySquare.id = 'currentDay';
-                daySquare.innerText = (i - paddingDays) + ' Today';
+                daySquare.innerText += " Today";
             }
 
+            const eventForDay = events.find(e => e.date === dayString);
             if (eventForDay) {
                 const eventDiv = document.createElement('div');
                 eventDiv.classList.add('event');
@@ -75,11 +79,10 @@ function load() {
         } else {
             daySquare.classList.add('padding');
         }
-
         calendar.appendChild(daySquare);
     }
 }
-    
+   
 
     function closeModal() {
         eventTitleInput.classList.remove('error');
